@@ -116,7 +116,7 @@ $ git --version
 ```
 If it is installed you will see something similar to:
 ```text
-git version 2.11.0
+git version 2.30.2
 ```
 If you do not have git installed, you will see something like:
 ```text
