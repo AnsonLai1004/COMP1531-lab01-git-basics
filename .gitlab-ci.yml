@@ -6,7 +6,7 @@ stages:
 before_script:
   - git config user.email "comp1531-marker@cse.unsw.edu.au"
   - git config user.name "comp1531-marker"
-  - git merge remotes/origin/master --allow-unrelated-histories -X ours --no-commit
+  - git merge remotes/origin/master --allow-unrelated-histories -X ours -m Automarking
 
 automarking:
   stage: automarking

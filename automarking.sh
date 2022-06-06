@@ -9,6 +9,7 @@ fi
 CI_PROJECT_NAME=$1
 
 for branch in $(git branch -r | grep -v '\-> \| old' | cut -c3-); do
+    # Fixme: for 22T3, also add marking/solution to hidden list.
     if [ "$branch" != "origin/master" ]; then
         git branch --track "${branch#origin/}" "$branch"
     fi
@@ -25,8 +26,17 @@ git log --color --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s
 echo -e "\n==========================================="
 echo "Basic Component (Add, Commit, Push)"
 
-files=$(find . -type f ! \( -name "*.md" -o -name "*.sh" -o -name ".git*" \) | wc -l)
-if [ "$files" -eq 0 ]
+echo
+files="$(find . -type f ! \( -name '*.md' -o -name '*.sh' -o -name '.git*' \))"
+numFiles="$(echo $files | grep -vc '^\s*$')"
+
+echo Files:
+echo "$files"
+echo Number of Files: 
+echo "$numFiles"
+
+echo
+if [ "$numFiles" -eq 0 ]
 then
     echo 'You did not create any files :(.'
 else
