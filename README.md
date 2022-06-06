@@ -513,7 +513,7 @@ For example, creating a branch called `FEATURE_BRANCH`:
     - this way, conflicts can be resolved locally.
     - while you can do this by checking out master, pull, then checkout back to your branch and merge, another way is to pull Gitlab's `master` branch directly into your local `FEATURE_BRANCH`:
         ```shell
-        $ git pull origin/master # assuming you are currently on FEATURE_BRANCH
+        $ git pull origin master # assuming you are currently on FEATURE_BRANCH
         ```
 1. Locally resolve any merge conflicts that occurred, then `add`, `commit` and `push` to Gitlab's `FEATURE_BRANCH`.
 1. Follow the link outputted from the `push` command to create a merge request.
