@@ -70,4 +70,4 @@ fi
 
 echo -e "\n==========================================="
 
-echo "$CI_PROJECT_NAME|$mark|" | tee mark.txt
+echo "$CI_PROJECT_NAME|$mark| " | tee mark.txt
